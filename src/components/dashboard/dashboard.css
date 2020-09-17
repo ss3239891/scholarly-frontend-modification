@@ -1,0 +1,225 @@
+.dash-container {
+  width: 85%;
+  min-height: auto;
+  max-height: 1150px;
+  float: right;
+  /* display: grid;
+  grid-template-columns: 1fr 4.85fr;
+  grid-template-rows: 15% auto;
+  grid-template-areas:
+    "leftside navbar"
+    "leftside main"; */
+}
+.navbar {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.left-sidebar-container {
+  /* grid-area: leftside; */
+  background-color: #ffffff;
+  transition: background-color .2s ease-in-out;
+  /* border-color: #727272; */
+  min-height: 100vh;
+  border-right: 1px solid #cccccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+}
+.main-content-container {
+  grid-area: main;
+  background-color: #edf3f3;
+}
+
+.right-sidebar-container {
+  grid-area: rightside;
+  background-color: #edf3f3;
+}
+.cards {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  grid-template-areas: ". cards"; */
+  /* grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.all-cards {
+  /* grid-area: cards; */
+
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.header {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "logo . one-i two-i";
+}
+.logo {
+  grid-area: logo;
+}
+.top-icons1 {
+  grid-area: one-i;
+  place-self: end center;
+}
+.top-icons2 {
+  grid-area: two-i;
+  place-self: end center;
+}
+.nav-items {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  color: #788699;
+  cursor: pointer;
+}
+.home,
+.discover,
+.username,
+.company {
+  line-height: 3rem;
+  font-size: calc(1.75 * var(0.5rem, 8px));
+  font-weight: 500;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.icons-nav {
+  margin-top: 0.6rem;
+  margin-right: 1rem;
+}
+
+.mobile {
+  display: none;
+}
+.loc-drop {
+  width: 300px;
+
+  /* margin-left: 50rem; */
+}
+
+@media only screen and (max-width: 1400px) {
+  .home,
+  .discover,
+  .username,
+  .company {
+    line-height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .all-cards {
+    /* grid-area: cards; */
+
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .dash-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3.7% 15% auto;
+    grid-template-areas:
+      "mobile"
+      "navbar"
+      "main";
+  }
+  .mobile {
+    grid-area: mobile;
+    display: block;
+    height: 50px;
+  }
+  .left-sidebar-container {
+    display: none;
+  }
+  .cards {
+    padding: 2rem;
+  }
+  .all-cards {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-content-container {
+    width: 100%;
+  }
+
+  /* .loc-drop {
+    margin-left: 20rem;
+  } */
+}
+
+@media only screen and (max-width: 1024px) {
+  .all-cards {
+    /* grid-area: cards; */
+
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .all-cards {
+    /* grid-area: cards; */
+
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    padding: 1rem;
+  }
+  .home,
+  .discover,
+  .username,
+  .company {
+    line-height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .icons-nav {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar{ 
+    width: 100%;
+  }
+  .main-content-container {
+    width: 100%;
+  }
+  .loc-drop {
+    width: 200px;
+    font-size: 15px;
+    /* margin-left: 50rem; */
+  }
+}
